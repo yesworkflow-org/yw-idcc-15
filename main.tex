@@ -1,16 +1,29 @@
-\documentclass[paper]{ijdc-v9} 
+\documentclass[practice]{ijdc-v9} 
+
+\usepackage[style=apa]{biblatex}
+\addbibresource{my.bib}
+\DeclareLanguageMapping{british}{british-apa}
+
+\title{YesWorkflow: A User-Oriented, Language-Independent Tool for Recovering Workflow Structure, Provenance, and Semantics from Scripts}
+
+\author{tianhong, tim, bertram,}
+\affil{Digital Curation Centre}
+\correspondence{xyz company Email: \email{a.ball@ukoln.ac.uk}}
+
+\received{18 January 2015}
+\revised{19 January 2015}
+\accepted{1 January 2015}
+
 \begin{document}
-\title[?short version?]{?full version?}
+
 \maketitle
 
 \section{Abstract}
 Abstract Abstract   Abstract  
- availability of tool on github (or ref at end)
  
-
 \section{Introduction and Motivation}
 
-A scientific workflow~\cite{xie2013dynamic} is a formal description of a process for accomplishing a scientific task, usually expressed in terms of tasks and their (dataflow) dependencies. Scientific workflows can include steps for the acquisition, integration, reduction, analysis, visualization, sharing, and curation of scientific data.  Scientific workflow management systems (SWfMSs) provide controlled environments for computational scientists to construct complex computational pipelines from modular buildings blocks. Advantages offered by SWfMSs include the intuitive rendering of the workflows as a directed graph, showing the computational steps and the dataflow between them, and the construction and visualization interfaces that they provide, which enable scientists to review, revise, and share their workflows as ?schemas? or schematic diagrams that are distinct from any specific workflow execution. In addition, many SWfMSs (e.g.: Kepler [CITE], Taverna [CITE], Pegasus [CITE], VisTrails [CITE], and Galaxy [CITE]) have been instrumented with runtime, or retrospective provenance capture and management capabilities. The provenance traces generated from workflow runs have been shown to be useful in a number of settings, helping scientists (i) examine the sequence of steps that led to a result; (ii) identify which inputs were used; (iii) interpret and understand outputs; and (iv) verify that the steps were performed according to acceptable procedures. 
+A scientific workflow\autocite{xie2013dynamic} is a formal description of a process for accomplishing a scientific task, usually expressed in terms of tasks and their (dataflow) dependencies. Scientific workflows can include steps for the acquisition, integration, reduction, analysis, visualization, sharing, and curation of scientific data.  Scientific workflow management systems (SWfMSs) provide controlled environments for computational scientists to construct complex computational pipelines from modular buildings blocks. Advantages offered by SWfMSs include the intuitive rendering of the workflows as a directed graph, showing the computational steps and the dataflow between them, and the construction and visualization interfaces that they provide, which enable scientists to review, revise, and share their workflows as ?schemas? or schematic diagrams that are distinct from any specific workflow execution. In addition, many SWfMSs (e.g.: Kepler [CITE], Taverna [CITE], Pegasus [CITE], VisTrails [CITE], and Galaxy [CITE]) have been instrumented with runtime, or retrospective provenance capture and management capabilities. The provenance traces generated from workflow runs have been shown to be useful in a number of settings, helping scientists (i) examine the sequence of steps that led to a result; (ii) identify which inputs were used; (iii) interpret and understand outputs; and (iv) verify that the steps were performed according to acceptable procedures. 
 
 \subsection{heading 1.1}
 
@@ -51,6 +64,17 @@ $n$&$n!$\\
 10&3628800\\
 \hline
 \end{tabular}\end{table}
+
+
+or example, you would start as in Figure~\ref{fig:start-paper}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=3.0in]{imagefile1}
+    \caption{Caption for figure}
+    \label{fig:start-paper}
+\end{figure}
+
 
 \section{Acknowledgements}
 
