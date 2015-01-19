@@ -1,0 +1,24 @@
+digraph Workflow {
+rankdir=LR
+node[shape=box style="filled" fillcolor="#CCFFCC" peripheries=1 label=""]
+node1 [label="fetch_mask"]
+node2 [label="load_data"]
+node3 [label="standardize_with_mask"]
+node4 [label="simple_diagnose"]
+node[shape=box style="rounded,filled" fillcolor="#FFFFCC" peripheries=1 label=""]
+node5 [label="result_NEE_pdf"]
+node6 [label="input_mask_file"]
+node7 [label="input_data_file"]
+node8 [label="NEE_data"]
+node9 [label="land_water_mask"]
+node10 [label="standardized_NEE_data"]
+node1 -> node9
+node6 -> node1
+node2 -> node8
+node7 -> node2
+node3 -> node10
+node8 -> node3
+node9 -> node3
+node4 -> node5
+node10 -> node4
+}
