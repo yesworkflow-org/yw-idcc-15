@@ -1,0 +1,83 @@
+digraph Workflow {
+rankdir=LR
+
+/* Use serif font for process labels and sans serif font for data labels */
+graph[fontname=Courier]
+edge[fontname=Helvetica]
+node[fontname=Courier]
+
+/* Set node style for input and output ports */
+node[shape=circle style="filled" fillcolor="#FFFFFF" peripheries=1 label="" width=0.1]
+
+/* Nodes representing workflow input ports */
+node1
+node2
+node3
+node4
+
+/* Nodes representing workflow output ports */
+node5
+node6
+node7
+node8
+node9
+node10
+node11
+node12
+node13
+node14
+node15
+node16
+node17
+node18
+
+/* Start of cluster for drawing box around programs in workflow */
+subgraph cluster0 {
+label="AffyGeneExpressionAnalysis"
+penwidth=2
+fontsize=18
+subgraph cluster1 {
+label=""
+color="white"
+
+/* Set node style for programs in workflow */
+node[shape=box3d style="filled" fillcolor="#CCFFCC" peripheries=1 label="" width=0.1]
+
+/* Nodes representing programs in workflow */
+node19 [label="Normalize"]
+node20 [label="SelectDEGs"]
+node21 [label="MakeHeatmap"]
+node22 [label="GO_Analysis"]
+
+/* Set node style for subworkflows in workflow */
+node[shape=box style="filled" fillcolor="#CCFFCC" peripheries=2 label="" width=0.1]
+
+/* Nodes representing subworkflows in workflow */
+
+/* End of cluster for drawing box around programs in workflow */
+}}
+
+/* Directed edges for each channel in workflow */
+node19 -> node5 [label="normalized_data_only_values"]
+node20 -> node6 [label="DEG_list_full_info"]
+node20 -> node7 [label="DEG_list_summary"]
+node20 -> node8 [label="DEG_list_higher_in_test_condition"]
+node20 -> node22 [label="DEG_list_higher_in_test_condition"]
+node20 -> node9 [label="DEG_list_lower_in_test_condition"]
+node20 -> node22 [label="DEG_list_lower_in_test_condition"]
+node21 -> node10 [label="heatmap"]
+node22 -> node11 [label="GO_stats_gene_list_higher_in_test_condition"]
+node22 -> node12 [label="GO_stats_BP_higher_in_test_condition"]
+node22 -> node13 [label="GO_stats_CC_higher_in_test_condition"]
+node22 -> node14 [label="GO_stats_MF_higher_in_test_condition"]
+node22 -> node15 [label="GO_stats_gene_list_lower_in_test_condition"]
+node22 -> node16 [label="GO_stats_BP_lower_in_test_condition"]
+node22 -> node17 [label="GO_stats_CC_lower_in_test_condition"]
+node22 -> node18 [label="GO_stats_MF_lower_in_test_condition"]
+node1 -> node19 [label="CEL_and_covdesc_Directory"]
+node19 -> node20 [label="normalized_data"]
+node2 -> node20 [label="minimum_fold_change_for_DEG"]
+node3 -> node20 [label="cutoff_p_value_for_DEG"]
+node20 -> node21 [label="DEG_list"]
+node4 -> node22 [label="GO_stats_p_value_cutoff"]
+}

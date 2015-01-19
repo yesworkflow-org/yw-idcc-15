@@ -1,10 +1,17 @@
 digraph Workflow {
 rankdir=LR
-node[shape=box style="filled" fillcolor="#CCFFCC" peripheries=1 label=""]
+
+/* Use serif font for process labels */
+graph[fontname=Courier]
+node[fontname=Courier]
+node[shape=box3d style="filled" fillcolor="#CCFFCC" peripheries=1 label=""]
 node1 [label="fetch_mask"]
 node2 [label="load_data"]
 node3 [label="standardize_with_mask"]
 node4 [label="simple_diagnose"]
+
+/* Use sans serif font for data labels */
+node[fontname=Helvetica]
 node[shape=box style="rounded,filled" fillcolor="#FFFFCC" peripheries=1 label=""]
 node5 [label="result_NEE_pdf"]
 node6 [label="input_mask_file"]
