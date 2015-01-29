@@ -136,10 +136,10 @@
   otherwise implicit in these scripts.  \YW\ tools extract and analyze
   these comments, represent the scripts in terms of entities based on
   the typical scientific workflow model, and provide graphical
-  renderings of this workflow-like view of the scripts. \YW\ annotations
-  also will allow the prospective provenance of the data products of 
+  renderings of this workflow-like view of the scripts. Future versions
+of \YW\ also will allow the prospective provenance of the data products of 
   these scripts to be queried in ways similar to those available to users 
-  of workflow systems.
+  of scientific workflow systems.
 \end{abstract}
 
 \section{Introduction}
@@ -637,16 +637,15 @@ still using their familiar scripting environments.
 
 \section{\YWT\ Development Roadmap}\label{sec-conclusions}
 
-In the following we describe some limitations of the current \yw\
-prototype and highlight a number of envisioned features for future
-development of the software.
+In the following we list some limitations of the current \yw\
+prototype and highlight features planned for future
+releases of the software.
 
-\paragraph{Multiple Script Files.}
-
-The \ywm{YW-Extract} module currently extracts \yw\ comments from a
-single source file. Scripts often span multiple source files, and
-future versions of \YW\ will allow multiple files to be analyzed at
-once.
+%\paragraph{Multiple Script Files.}
+%The \ywm{YW-Extract} module currently extracts \yw\ comments from a
+%single source file. Scripts often span multiple source files, and
+%future versions of \YW\ will allow multiple files to be analyzed at
+%once.
 %
 %Initially this will be supported in a language-independent manner by
 %allowing multiple source files to be listed on the command
@@ -685,24 +684,25 @@ once.
 % \textsf{Kurator-Akka} workflow system and to query the prospective
 % provenance of products of these workflows.
 
-\paragraph{Nested Code Blocks.}
-The \ywm{YW-Extract} and \ywm{YW-Model} modules currently support
-simple nesting of code blocks. Any pair of \ywa{@begin} and \ywa{@end}
-comment lines can enclose code that contain any number of other code
+\paragraph{Visualization of Nested Code Blocks.}
+The \ywm{YW-Extract} and \ywm{YW-Model} modules support
+ nesting of code blocks. Any pair of \ywa{@begin} and \ywa{@end}
+comment lines can enclose code that contains any number of other code
 blocks delimited with \ywa{@begin} and \ywa{@end} comment lines.
-% The workflow model constructed for such a script reflects such nesting. In
-% terms of the \yw\ model, a workflow contains one or more programs, and
-% any of these programs can in turn be a workflow that contains further
-% nested programs and workflows.
+The workflow model constructed for a script reflects such nesting, i.e.
+the top-level workflow corresponding to the script as a whole may contain 
+one or more programs (code blocks), and any of these programs can in turn be a 
+sub-workflow that contains further nested programs and workflows.
 %
 %However, graphing support for nested workflows currently is
 %incomplete. The process-graph view of a nested workflow renders each
 %level of the workflow as a separate graph. The data- and
 %combined-graph views do not reveal subworkflows nested within the
 %top-level workflow. 
-Future versions of \ywm{YW-Graph} will render such nested code blocks as subworkflows. 
+Future versions of \ywm{YW-Graph} will reveal these nested code blocks 
+and render sub-workflows graphically.
 %Additionally, \ywm{YW-Graph} will be able
-%to render a specific, single workflow or subworkflow as desired.
+%to render a specific, single workflow or sub-workflow as desired.
 
 \paragraph{Functions and Function Calls.}
 \ywm{YW-Extract} currently expects nested code blocks to be defined
@@ -711,7 +711,7 @@ classes) with a top-level script that calls these functions (or
 methods on objects). These functions can in turn call other functions.
 %
 Future versions of \YW\ will allow function declarations to be marked
-up with \yw\ comments in a manner similar to that of Javadoc or
+up with \yw\ comments in a manner similar to that supported by Javadoc and
 DOxygen. Calls to these functions also will be annotated with \yw\
 markup. The result will be that \ywm{YW-Extract} and \ywm{YW-Model}
 will be able to represent function calls as nested code blocks.
