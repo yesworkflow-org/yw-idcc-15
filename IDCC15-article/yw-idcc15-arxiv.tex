@@ -65,8 +65,6 @@
 
 \begin{document}
 
-% \title{\bf YesWorkflow: A User-Oriented, Language-Independent Tool for Recovering Workflow Structure, Provenance, and Semantics from Scripts}
-
 \title{\bf \YWT: A User-Oriented, Language-Independent Tool for Recovering Workflow Information from Scripts}
 
 \author{
@@ -186,17 +184,11 @@ to debug their workflows.
   provenance.
 
 Despite these and other advanced features of workflow systems,
-% (e.g., for data- and/or pipeline-parallel execution)
 a vast number of computational ``workflows'' continue to be developed
 using general purpose or specialized scripting languages such as
 Python, \R, and \MATLAB. This is true in particular for the ``long
 tail of science'' \cite{wallis2013if,Heidorn2008Shedding}, where
 advanced features such as provenance support are rarely available.
-% CITE J. C. Wallis, E. Rolando, and C. L. Borgman, “If We Share Data,
-% Will Anyone Use Them? Data Sharing and Reuse in the Long Tail of
-% Science and Technology,” PLoS One, vol. 8, no. 7, p. e67332, Jul.
-% 2013. CITE: P. B. Heidorn. Shedding light on the dark data in the
-% long tail of science. Library Trends, 57(2):280-299, 2008.
 For example, provenance libraries for \R\ have only recently been
 announced \cite{Lerner2014RDataTracker}, while for Python, a new tool
 called \NW\ has just been developed \cite{murta2014noWorkflow}. The
@@ -401,7 +393,7 @@ run-time data-provenance recorder:
 
  \begin{figure}[t]
    \centering
-   \includegraphics[width=.99\textwidth]{figures/Affymetrix_process-crop.pdf}
+   \includegraphics[width=.99\textwidth]{figures/Affymetrix_process_whitebox-crop.pdf}
    \caption{Process workflow view of an
      Affymetrix analysis script (in \R).}
    \label{fig-affymetrics}
@@ -471,7 +463,6 @@ climate scientists primarily use \MATLAB\ scripts to standardize
 terrestrial biosphere model output across multiple models and
 simulation runs for intercomparison purposes and to facilitate
 diagnosis and attribution.
-% <narrative on how the resulting graph is used>
 MsTMIP is a large, collaborative effort, aimed at harmonizing a number
 of complex terrestrial biospheric models for the purposes of comparing
 these model outputs \cite{huntzinger2013north}. There is a strong need
@@ -642,49 +633,6 @@ In the following we list some limitations of the current \yw\
 prototype and highlight features planned for future
 releases of the software.
 
-%\paragraph{Multiple Script Files.}
-%The \ywm{YW-Extract} module currently extracts \yw\ comments from a
-%single source file. Scripts often span multiple source files, and
-%future versions of \YW\ will allow multiple files to be analyzed at
-%once.
-%
-%Initially this will be supported in a language-independent manner by
-%allowing multiple source files to be listed on the command
-%line. Support subsequently will be added for listing relevant source
-%files in a file and providing this to \YW.  Finally, language-specific
-%support may be added the future for automatically analyzing files
-%referred to in file, package, or library include/import directives.
-
-% \paragraph{Intermediate File Formats.}
-% \YW\ aims to be highly modular with the goal of enabling
-% interoperability of standard \yw\ modules with custom modules
-% developed by others. Key to this modularity is the definition of
-% simple input and output file formats for each module. Current versions
-% of the software do not define these formats and depend on intermediate
-% results begin passed from one module to the next via data structures
-% in memory.
-% %
-% Upcoming versions of \YW\ will define output formats for
-% \ywm{YW-Extract} and \ywm{YW-Model}. The \ywm{YW-Extract} output file
-% will represent a scripting-language neutral description of the \yw\
-% comments found in a set of analyzed script files. \ywm{YW-Model} will
-% be able to take the \ywm{YW-Extract} output as input and in turn will
-% be able to save its results as a text description of the analyzed
-% scripts in terms of the \yw\ workflow model. \ywm{YW-Graph} and
-% \ywm{YW-Query} will take as input the output of \ywm{YW-Model}.
-
-% When support for these intermediate file formats are complete, users
-% and other development teams will be able write alternative \yw\
-% modules for graphing, querying, and analyzing \yw\ comments and \yw\
-% models of scripts. They will also be able to develop tools that
-% extract \yw-compatible workflow structure from scripts and workflows
-% not marked up with \yw\ comments, and to apply \yw\ graphing and
-% querying capabilities to such scripts and workflows. For example, the
-% Kurator project team plans to use the \ywm{YW-Graph} and
-% \ywm{YW-Query} tools to graphically render workflows defined using the
-% \textsf{Kurator-Akka} workflow system and to query the prospective
-% provenance of products of these workflows.
-
 \paragraph{Visualization of Nested Code Blocks.}
 The \ywm{YW-Extract} and \ywm{YW-Model} modules support
  nesting of code blocks. Any pair of \ywa{@begin} and \ywa{@end}
@@ -694,16 +642,8 @@ The workflow model constructed for a script reflects such nesting, i.e.
 the top-level workflow corresponding to the script as a whole may contain 
 one or more programs (code blocks), and any of these programs can in turn be a 
 sub-workflow that contains further nested programs and workflows.
-%
-%However, graphing support for nested workflows currently is
-%incomplete. The process-graph view of a nested workflow renders each
-%level of the workflow as a separate graph. The data- and
-%combined-graph views do not reveal subworkflows nested within the
-%top-level workflow. 
 Future versions of \ywm{YW-Graph} will reveal these nested code blocks 
 and render sub-workflows graphically.
-%Additionally, \ywm{YW-Graph} will be able
-%to render a specific, single workflow or sub-workflow as desired.
 
 \paragraph{Functions and Function Calls.}
 \ywm{YW-Extract} currently expects nested code blocks to be defined
@@ -720,9 +660,6 @@ will be able to represent function calls as nested code blocks.
 \paragraph{Interactive Graphs.}
 \ywm{YW-Graph} currently produces static graphical views (in the
 well-known Graphviz-DOT format). 
-%The resulting graphs can be large and
-%complex, and the data view can be particularly difficult to interpret
-%due to many crossing arrows. 
 An interactive viewer for \yw\ graphical
 output will make these graphs easier to explore and interpret. In the planned
 graphical user interface, clicking on a data item in the combined or
@@ -744,23 +681,10 @@ chosen graphical view automatically. Users of this feature will
 continue to be able use their favorite text editor or IDE for
 developing their scripts.
 
-% \paragraph{Flexible Comment Layouts.}
-% \ywm{YW-Extract} currently expects each \yw\ comment to occur on a
-% single line of the script and to occupy that entire line. Upcoming
-% version of \ywm{YW-Extract} will allow multiple \yw\ comments to be
-% placed on a single line. \yw\ comments also will be allowed within or
-% at the end of code lines (e.g. an \ywa{@i}n comment on the line with
-% the first usage of an input variable). Context-dependent abbreviations
-% of \yw\ comment tags and structures will further reduce wordiness of
-% \yw\ comments.
-
 \paragraph{Distinguished Data and Parameters.}
 The inputs to scripts for processing scientific data often can be
 viewed either as data (the data to be processed by the scripts) or as
 parameters (values that control how that data is processed).
-% \YW\ currently does not distinguish between these. As a result, it can be
-% difficult to discern the more important dataflows in graphical output
-% from the (less important) application of parameter settings. 
 Planned versions of the \yw\ comment vocabulary will allow data and parameters
 to be distinguished. \ywm{YW-Graph} optionally will emphasize graph edges,
 nodes, and labels representing data over those representing
@@ -768,8 +692,6 @@ parameters.
 
 
 \paragraph{Validation of Comments.}
-%\YW\ currently provides minimal validation of the \yw\ comments added
-%to a script. 
 The future \ywm{YW-Validate} module will perform
 extensive validation of \yw\ comments in light of the actual code in
 the script.  This capability will help guide users adding \yw\
@@ -797,7 +719,6 @@ modeling and analysis features to scientific ``workflows'' that are
 defined in script form. Through simple user-annotations in the
 comments of scripts, dataflow and workflow structure are revealed by
 the \yw\ toolkit. The user can thus exploit prospective 
-%(and in the future, retrospective) 
 provenance information from scripts, e.g., by
 visualizing, querying, and analyzing this information.
 
@@ -817,9 +738,6 @@ instances that were used in the various runs of the script (provided
 these have been shared). Since the \yw\ approach is language
 independent, it will also facilitate code migration, say from \MATLAB\
 to \R, or from \R\ to Python.
-% , etc. by allowing users to recreate a given script - now informed by
-% the \yw\ documentation and artifacts - in the desired target language,
-% working through the workflow “step by step”.
 
 In the Kurator project \cite{kuratorproject} we plan to enable
 collection managers to author their own data curation workflows using
