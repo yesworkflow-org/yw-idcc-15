@@ -1,5 +1,5 @@
 # yw-idcc-15
-LaTeX sources and files related to the IDCC 2015 YesWorkflow paper.  
+LaTeX sources and files related to the IDCC 2015 YesWorkflow paper.  The version published at arXiv.org is available at http://arxiv.org/abs/1502.02403.
 
 ### Summary of Contents
 The [IDCC15-article](https://github.com/yesworkflow-org/yw-idcc-15/tree/master/IDCC15-article) directory contains the latest LaTeX sources and PDF for the current revision of the YesWorkflow paper.  The [examples](https://github.com/yesworkflow-org/yw-idcc-15/tree/master/examples) directory contains input scripts and resulting YesWorkflow outputs for four example scripts. 
