@@ -12,5 +12,7 @@ This repository is tagged to indicate revisions of the paper published in differ
 Tag            | Date    | Description | Paper Revision
 ---------------|---------|----------|--------------------------------------
 [idcc15practice](https://github.com/yesworkflow-org/yw-idcc-15/tree/idcc15practice "idcc15practice") | 21Jan15 | Revision submitted to IDCC 2015 as a practice paper. | [yw-idcc15-preprint.pdf](https://github.com/yesworkflow-org/yw-idcc-15/blob/idcc15practice/IDCC15-article/yw-idcc15-preprint.pdf?raw=true)
+[idcc15arxiv](https://github.com/yesworkflow-org/yw-idcc-15/tree/idcc15arxiv "idcc15arxiv") | 09Feb15 |Revision submitted to arXiv.org. | [yw-idcc15-arxiv.pdf](https://github.com/yesworkflow-org/yw-idcc-15/blob/idcc15arxiv/IDCC15-article/yw-idcc15-arxiv.pdf?raw=true)
+
 
  
