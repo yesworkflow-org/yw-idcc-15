@@ -1,10 +1,12 @@
 # yw-idcc-15
-LaTeX sources and files related to the IDCC 2015 YesWorkflow paper.  The published version of the paper is available at http://arxiv.org/abs/1502.02403.
+LaTeX sources and files related to the IDCC 2015 YesWorkflow paper.  The published version of the paper is available at http://arxiv.org/abs/1502.02403.  A version for publication in an upcoming issue of [IJDC](http://www.ijdc.net/index.php/ijdc) is in preparation.
 
 ### Summary of Contents
-The [IDCC15-article](https://github.com/yesworkflow-org/yw-idcc-15/tree/master/IDCC15-article) directory contains the latest LaTeX sources and PDF for the current revision of the YesWorkflow paper.  The [examples](https://github.com/yesworkflow-org/yw-idcc-15/tree/master/examples) directory contains input scripts and resulting YesWorkflow outputs for four example scripts. 
+* The [IDCC15-article](https://github.com/yesworkflow-org/yw-idcc-15/tree/master/IDCC15-article) directory contains the LaTeX sources and PDF for the revision of the paper presented at IDCC'15 and published to arXiv.org.  
+* The [yw-ijdc-2015](https://github.com/yesworkflow-org/yw-idcc-15/tree/master/yw-ijdc-2015) directory contains the latest LaTeX sources and PDF for the revision of the YesWorkflow paper being prepared for publication in IJDC.
+* The [examples](https://github.com/yesworkflow-org/yw-idcc-15/tree/master/examples) directory contains input scripts and resulting YesWorkflow outputs for four example scripts. 
  
-The current version of the paper is [yw-idcc15-arxiv.pdf](https://github.com/yesworkflow-org/yw-idcc-15/blob/master/IDCC15-article/yw-idcc15-arxiv.pdf?raw=true).
+The latest revision of the paper is [yw-ijdc-2015.pdf](https://github.com/yesworkflow-org/yw-idcc-15/blob/master/yw-ijdc-2015/yw-ijdc-2015.pdf?raw=true).
 
 ### Repository Tags
 This repository is tagged to indicate revisions of the paper published in different venues:
