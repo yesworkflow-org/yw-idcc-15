@@ -1,4 +1,5 @@
-\documentclass[15]{idcc}
+%\documentclass[15]{idcc}
+\documentclass[15]{ijdc-v9}
 
 \usepackage{embedfile}
 \embedfile[desc={LaTeX source for this PDF}]{\jobname.tex}
@@ -149,10 +150,11 @@ processed. By capturing and subsequently sharing such
 \emph{provenance} information, scientists can provide a detailed
 account of how their results were derived from the given inputs via
 intermediate results, workflow steps, and parameter settings, thereby
-facilitating transparency and reproducibility of workflow products. In
-addition to this external use, provenance information can also be used
-internally, e.g., to allow scientists to trace sources of errors and
-to debug their workflows.
+facilitating transparency and reproducibility of workflow products
+\cite{stodden2014implementing}. 
+In addition to this external use, provenance information can also be
+used internally, e.g., to allow scientists to trace sources of errors
+and to debug their workflows.
 
   The data provenance captured by workflow environments is sometimes
   called \emph{retrospective provenance} to distinguish it from
@@ -431,6 +433,7 @@ on the \yw\ GitHub site \cite{YWgithub2015}.
    \caption{Combined workflow view of a MsTMIP script (in
      \MATLAB). \yw\ views can be easily tweaked via Graphviz
      properties in the generated DOT files: here, a ``Taverna-style''
+     \protect\cite{oinn2004taverna}
      top-down layout is used, as opposed to the default left-to-right
      display.}
    \label{fig-mstmip}
@@ -550,7 +553,7 @@ higher level of abstraction by revealing the dataflow that underlies the
 interactions between the different pieces of a script or program.
 
 \yw\ is also related to ideas from literate programming\footnote{Don
-  Knuth has argued \citeNP{knuth1984literate} that we should change our
+  Knuth has argued \cite{knuth1984literate} that we should change our
   traditional attitude to programming: ``Instead of imagining that our
   main task is to instruct a \emph{computer} what to do, let us
   concentrate rather on explaining \emph{human beings} what we want a
