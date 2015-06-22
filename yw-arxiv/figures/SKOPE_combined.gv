@@ -1,0 +1,58 @@
+digraph Workflow {
+rankdir=TB
+
+/* Use serif font for process labels */
+graph[fontname=Courier]
+node[fontname=Courier]
+node[shape=box3d style="filled" fillcolor="#CCFFCC" peripheries=1 label=""]
+node1 [label="GetModernClimate"]
+node2 [label="SubsetAllData"]
+node3 [label="CAR_Analysis_unique"]
+node4 [label="CAR_Analysis_union"]
+node5 [label="CAR_Reconstruction_union"]
+node6 [label="CAR_Reconstruction_union_output"]
+
+/* Use sans serif font for data labels */
+node[fontname=Helvetica]
+node[shape=box style="rounded,filled" fillcolor="#FFFFCC" peripheries=1 label=""]
+node7 [label="ZuniCibola_PRISM_grow_prcp_ols_loocv_union_recons.tif"]
+node8 [label="ZuniCibola_PRISM_grow_prcp_ols_loocv_union_errors.tif"]
+node9 [label="master_data_directory"]
+node10 [label="prism_directory"]
+node11 [label="PRISM_annual_growing_season_precipitation"]
+node12 [label="tree_ring_data"]
+node13 [label="calibration_years"]
+node14 [label="retrodiction_years"]
+node15 [label="dendro_series_for_calibration"]
+node16 [label="cellwise_unique_selected_linear_models"]
+node17 [label="cellwise_union_selected_linear_models"]
+node18 [label="dendro_series_for_reconstruction"]
+node19 [label="raster_brick_spatial_reconstruction"]
+node20 [label="raster_brick_spatial_reconstruction_errors"]
+node1 -> node11
+node9 -> node1
+node10 -> node1
+node2 -> node15
+node2 -> node18
+node11 -> node2
+node12 -> node2
+node13 -> node2
+node14 -> node2
+node3 -> node16
+node11 -> node3
+node15 -> node3
+node4 -> node17
+node11 -> node4
+node15 -> node4
+node16 -> node4
+node5 -> node19
+node5 -> node20
+node11 -> node5
+node15 -> node5
+node17 -> node5
+node18 -> node5
+node6 -> node7
+node6 -> node8
+node19 -> node6
+node20 -> node6
+}
