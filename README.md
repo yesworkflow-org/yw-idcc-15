@@ -1,5 +1,5 @@
 # yw-idcc-15
-LaTeX sources and files related to the YesWorkflow paper first presented at IDCC'15, and later published in the International Journal of Digital Curation
+LaTeX sources and files related to the YesWorkflow paper first presented at IDCC'15, and later published in the International Journal of Digital Curation.
 
 ### Final published version of paper
 T. McPhillips, T. Song, T. Kolisnik, S. Aulenbach, K. Belhajjame, R.K. Bocinsky, Y. Cao, J. Cheney, F. Chirigati, S. Dey, J. Freire, C. Jones, J. Hanken, K.W. Kintigh, T.A. Kohler, D. Koop, J.A. Macklin, P. Missier, M. Schildhauer, C. Schwalm, Y. Wei, M. Bieda, B. Ludäscher (2015). **[YesWorkflow: A User-Oriented, Language-Independent Tool for Recovering Workflow Information from Scripts](http://ijdc.net/index.php/ijdc/article/view/10.1.298)**. *International Journal of Digital Curation* **10**, 298-313. [[PDF](http://ijdc.net/index.php/ijdc/article/download/10.1.298/401)]
